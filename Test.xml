@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="17.0.1" class="java.beans.XMLDecoder">
+ <object class="com.company.Lecturer" id="Lecturer0">
+  <void class="com.company.Lecturer" method="getField">
+   <string>testClass</string>
+   <void method="set">
+    <object idref="Lecturer0"/>
+    <object class="com.company.TestClass">
+     <void property="testInt">
+      <int>10</int>
+     </void>
+     <void property="testString">
+      <string>wf</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void class="com.company.Lecturer" method="getField">
+   <string>testClasses</string>
+   <void method="set">
+    <object idref="Lecturer0"/>
+    <object class="java.util.ArrayList"/>
+   </void>
+  </void>
+  <void property="age">
+   <int>10</int>
+  </void>
+  <void property="firstName">
+   <string>erg</string>
+  </void>
+  <void property="lastName">
+   <string>feef</string>
+  </void>
+  <void property="salary">
+   <int>12</int>
+  </void>
+  <void property="subject">
+   <string>wfe</string>
+  </void>
+ </object>
+</java>

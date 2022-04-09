@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testClass>
+	<testInt>
+		10
+	</testInt>
+	<testString>
+		wf
+	</testString>
+</testClass>
+<testClasses>
+	<testInt>
+		10
+	</testInt>
+	<testString>
+		wf
+	</testString>
+	<testInt>
+		10
+	</testInt>
+	<testString>
+		wf
+	</testString>
+</testClasses>
+<subject>
+	wfe
+</subject>
+<salary>
+	12
+</salary>
+<age>
+	10
+</age>
+<firstName>
+	erg
+</firstName>
+<lastName>
+	feef
+</lastName>
