@@ -1,38 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testClass>
-	<testInt>
+<object class="com.company.Lecturer">
+	<testClass>
+		<testInt>
+			10
+		</testInt>
+		<testString>
+			wf
+		</testString>
+	</testClass>
+	<testClasses>
+		<testInt>
+			10
+		</testInt>
+		<testString>
+			wf
+		</testString>
+		<testInt>
+			10
+		</testInt>
+		<testString>
+			wf
+		</testString>
+	</testClasses>
+	<subject>
+		wfe
+	</subject>
+	<salary>
+		12
+	</salary>
+	<age>
 		10
-	</testInt>
-	<testString>
-		wf
-	</testString>
-</testClass>
-<testClasses>
-	<testInt>
-		10
-	</testInt>
-	<testString>
-		wf
-	</testString>
-	<testInt>
-		10
-	</testInt>
-	<testString>
-		wf
-	</testString>
-</testClasses>
-<subject>
-	wfe
-</subject>
-<salary>
-	12
-</salary>
-<age>
-	10
-</age>
-<firstName>
-	erg
-</firstName>
-<lastName>
-	feef
-</lastName>
+	</age>
+	<firstName>
+		erg
+	</firstName>
+	<lastName>
+		feef
+	</lastName>
+</object>
+<object class="com.company.Assistant">
+		<assistant>
+		</assistant>
+		<subject>
+			null
+		</subject>
+		<salary>
+			0
+		</salary>
+		<age>
+			0
+		</age>
+		<firstName>
+			null
+		</firstName>
+		<lastName>
+			null
+		</lastName>
+</object>

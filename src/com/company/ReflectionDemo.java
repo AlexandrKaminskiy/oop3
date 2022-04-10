@@ -1,9 +1,6 @@
 package com.company;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -27,7 +24,11 @@ public class ReflectionDemo {
         writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
 
         for (var human : humanArrayList) {
+            String s = String.valueOf(human.getClass()).substring(6);
+            writer.write( "<object class=\"" + s + "\">\n");
+            tabsCount++;
             getFields(human);
+            writer.write( "</object>\n");
         }
         writer.flush();
     }
@@ -92,5 +93,6 @@ public class ReflectionDemo {
           //  getFields(obj);
         }
     }
+
 
 }
