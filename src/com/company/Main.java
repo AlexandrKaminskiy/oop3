@@ -24,8 +24,10 @@ public class Main {
 //        ReflectionDemo reflectionDemo = new ReflectionDemo(humanList);
 //        reflectionDemo.serialize();
 
-        DeserializeDemo demo = new DeserializeDemo("out.xml");
-        demo.deserialize();
+//        DeserializeDemo demo = new DeserializeDemo("out.xml");
+//        demo.deserialize();
+        DeserializeDemo1 demo1 = new DeserializeDemo1("out.xml");
+        demo1.deserialize();
     }
 
     void testEncode(Lecturer lecturer) {

@@ -10,16 +10,16 @@
 	</testClass>
 	<testClasses>
 		<testInt>
-			10
+			1
 		</testInt>
 		<testString>
-			wf
+			111
 		</testString>
 		<testInt>
-			10
+			2
 		</testInt>
 		<testString>
-			wf
+			222
 		</testString>
 	</testClasses>
 	<subject>

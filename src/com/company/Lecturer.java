@@ -13,8 +13,8 @@ public class Lecturer extends Teacher implements Serializable {
         testClass = new TestClass(i,str);
 
         testClasses = new ArrayList<>();
-        testClasses.add(testClass);
-        testClasses.add(testClass);
+        testClasses.add(new TestClass(1,"111"));
+        testClasses.add(new TestClass(2,"222"));
       //  ii = new Integer[]{1, 2, 3, 4};
     }
 
