@@ -41,20 +41,26 @@ public class ReflectionDemo {
                 Field[] fields = claz.getDeclaredFields();
                 for (Field field : fields) {
                     field.setAccessible(true);
-                    writer.write( tabs() + "<" + field.getName() + ">\n");
+                    writer.write( tabs() + "<" + field.getName());
                     selectorName.push(tabs() + "</" + field.getName() + ">\n");
                     tabsCount++;
                     if (!field.getType().isPrimitive() && (field.getType() != String.class)) {
                         if (Collection.class.isAssignableFrom(field.getType())) {
+                            writer.write(" class=\""+String.valueOf(field.getType()).substring(6) + "\">\n");
                             showCollection(field, o);
+
                         } else if (field.getType().isArray()) {
                             showArray(field,o);
-                        } else getFields(field.get(o));
+                        } else {
+                            writer.write(" class=\""+String.valueOf(field.getType()).substring(6) + "\">\n");
+                            getFields(field.get(o));
+                        }
                         writer.write(selectorName.pop());
                         tabsCount--;
                         continue;
                     }
-                    writer.write(tabs() + field.get(o) + "\n");
+
+                    writer.write( ">\n" + tabs() + field.get(o) + "\n");
 
                     writer.write(selectorName.pop());
                     tabsCount--;
@@ -80,9 +86,17 @@ public class ReflectionDemo {
         try {
             Collection arr = (Collection) field.get(o);
             for (var el : arr) {
+                Class clazz = el.getClass();
+                writer.write(tabs() + "<element class=\""+clazz.getName()+"\">\n");
+                tabsCount++;
                 getFields(el);
+                tabsCount--;
+                writer.write(tabs() + "</element>\n");
+
             }
         } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -93,6 +107,4 @@ public class ReflectionDemo {
           //  getFields(obj);
         }
     }
-
-
 }

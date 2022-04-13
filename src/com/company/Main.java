@@ -23,7 +23,7 @@ public class Main {
 //        humanList.add(human1);
 //        ReflectionDemo reflectionDemo = new ReflectionDemo(humanList);
 //        reflectionDemo.serialize();
-
+//
 //        DeserializeDemo demo = new DeserializeDemo("out.xml");
 //        demo.deserialize();
         DeserializeDemo1 demo1 = new DeserializeDemo1("out.xml");
