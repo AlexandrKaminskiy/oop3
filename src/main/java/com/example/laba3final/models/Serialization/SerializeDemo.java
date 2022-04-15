@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Stack;
 
-public class ReflectionDemo {
+public class SerializeDemo {
 
     private ArrayList<UniversityRelatedHuman> humanArrayList;
     private FileWriter writer;
     private Stack<String> selectorName;
     private int tabsCount;
-    ReflectionDemo(ArrayList<UniversityRelatedHuman> humanArrayList) throws IOException {
+    SerializeDemo(ArrayList<UniversityRelatedHuman> humanArrayList) throws IOException {
         this.humanArrayList = humanArrayList;
         writer = new FileWriter("out.xml");
         selectorName = new Stack<>();

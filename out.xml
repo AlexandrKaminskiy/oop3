@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object class="com.company.Lecturer">
+	<testClass class="com.company.TestClass">
+		<testInt>
+			10
+		</testInt>
+		<testString>
+			wf
+		</testString>
+	</testClass>
+	<testClasses class="java.util.ArrayList">
+		<element class="com.company.TestClass">
+			<testInt>
+				1
+			</testInt>
+			<testString>
+				111
+			</testString>
+		</element>
+		<element class="com.company.TestClass">
+			<testInt>
+				2
+			</testInt>
+			<testString>
+				222
+			</testString>
+		</element>
+	</testClasses>
+	<subject>
+		wfe
+	</subject>
+	<salary>
+		12
+	</salary>
+	<age>
+		10
+	</age>
+	<firstName>
+		erg
+	</firstName>
+	<lastName>
+		feef
+	</lastName>
+</object>
+<object class="com.company.Assistant">
+		<assistant class="com.company.Assistant">
+		</assistant>
+		<subject>
+			null
+		</subject>
+		<salary>
+			0
+		</salary>
+		<age>
+			0
+		</age>
+		<firstName>
+			null
+		</firstName>
+		<lastName>
+			null
+		</lastName>
+</object>
