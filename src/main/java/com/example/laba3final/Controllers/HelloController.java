@@ -1,5 +1,6 @@
 package com.example.laba3final.Controllers;
 
+import com.example.laba3final.models.Serialization.ReflectionDemo;
 import com.example.laba3final.models.UniversityRelatedHuman;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -20,13 +21,13 @@ public class HelloController {
     private ListView<String> fieldList;
     @FXML
     private Button deleteObjectButton;
-    @FXML
-    private Button okButton;
+
     @FXML
     private TextField inputValueTextArea;
     @FXML
     private ChoiceBox<String> objectClassChoiseBox;
-
+    @FXML
+    private TextField fieldValue;
 
     private HashMap<String,UniversityRelatedHuman> objectMap;
     private ArrayList<String> objectNamesList;
@@ -52,7 +53,10 @@ public class HelloController {
 
     }
     private void showFields(String selectedItem) {
-
+        if (selectedItem != null) {
+            UniversityRelatedHuman human = objectMap.get(selectedItem);
+            fieldList.setItems(FXCollections.observableList(ReflectionDemo.getfieldNames(human)));
+        }
     }
 
     @FXML
@@ -61,7 +65,6 @@ public class HelloController {
         objectClassChoiseBox.setItems(FXCollections.observableArrayList("Assistant","Lecturer","Staff","Student"));
         objectClassChoiseBox.setValue("Assistant");
         deleteObjectButton.setDisable(true);
-        okButton.setDisable(true);
         objectMap = new HashMap<>();
         objectList.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> {
             showFields(objectList.getSelectionModel().getSelectedItem());

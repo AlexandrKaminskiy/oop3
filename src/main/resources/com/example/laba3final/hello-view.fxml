@@ -14,6 +14,6 @@
       <Button fx:id="deleteObjectButton" layoutX="193.0" layoutY="266.0" mnemonicParsing="false" text="Delete" />
       <ChoiceBox fx:id="objectClassChoiseBox" layoutX="44.0" layoutY="266.0" prefHeight="26.0" prefWidth="140.0" />
       <TextField fx:id="inputValueTextArea" layoutX="44.0" layoutY="310.0" prefHeight="26.0" prefWidth="140.0" />
-      <Button fx:id="okButton" layoutX="348.0" layoutY="311.0" mnemonicParsing="false" text="Ok" />
+      <TextField fx:id="fieldValue" layoutX="348.0" layoutY="266.0" />
    </children>
 </AnchorPane>
