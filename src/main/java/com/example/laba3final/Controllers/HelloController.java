@@ -21,7 +21,6 @@ public class HelloController {
     private ListView<String> fieldList;
     @FXML
     private Button deleteObjectButton;
-
     @FXML
     private TextField inputValueTextArea;
     @FXML
@@ -50,13 +49,6 @@ public class HelloController {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 
         }
-
-    }
-    private void showFields(String selectedItem) {
-        if (selectedItem != null) {
-            UniversityRelatedHuman human = objectMap.get(selectedItem);
-            fieldList.setItems(FXCollections.observableList(ReflectionDemo.getfieldNames(human)));
-        }
     }
 
     @FXML
@@ -67,7 +59,17 @@ public class HelloController {
         deleteObjectButton.setDisable(true);
         objectMap = new HashMap<>();
         objectList.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> {
-            showFields(objectList.getSelectionModel().getSelectedItem());
+            String itemName = objectList.getSelectionModel().getSelectedItem();
+            if (itemName != null) {
+                fieldList.setItems(FXCollections.observableList(ReflectionDemo.getfieldNames(objectMap.get(itemName))));
+            }
+        });
+
+        fieldList.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> {
+            String itemName = fieldList.getSelectionModel().getSelectedItem();
+            if (itemName != null) {
+                fieldList.setItems(FXCollections.observableList(ReflectionDemo.getfieldNames(objectMap.get(itemName))));
+            }
         });
     }
 

@@ -13,7 +13,11 @@ public class Student extends UniversityRelatedHuman implements Serializable {
         this.GPA = GPA;
     }
 
-    public Student(){}
+    public Student(){
+        super(0, "", "");
+        this.groupName = "";
+        this.GPA = 0;
+    }
     public String getGroupName() {
         return groupName;
     }

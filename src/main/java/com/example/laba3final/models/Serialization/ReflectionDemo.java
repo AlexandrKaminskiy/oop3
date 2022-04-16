@@ -4,6 +4,8 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class ReflectionDemo {
+//    final public ArrayList<String> classNames = new ArrayList<>("Assistant","Lecturer","Staff","Student");
+
     public static ArrayList<String> getfieldNames(Object obj) {
         ArrayList<String> fieldNames = new ArrayList<>();
         Class clazz = obj.getClass();
@@ -15,9 +17,9 @@ public class ReflectionDemo {
             }
             clazz = clazz.getSuperclass();
         }
-
         return fieldNames;
     }
+
     public static Object getValue(Object obj, String fieldName) {
         Class clazz = obj.getClass();
         try {
@@ -29,4 +31,7 @@ public class ReflectionDemo {
         }
         return null;
     }
+
+
+
 }

@@ -9,7 +9,10 @@ public class Staff extends Employee implements Serializable {
         super(age, firstName, lastName, salary);
         this.typeOfWork = typeOfWork;
     }
-    public Staff(){}
+    public Staff(){
+        super(0, "", "", 0);
+        this.typeOfWork = "";
+    }
     public String getTypeOfWork() {
         return typeOfWork;
     }

@@ -21,7 +21,6 @@ public class DeserializeDemo {
     }
     public ArrayList<UniversityRelatedHuman> deserialize() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-
         humanArrayList.clear();
         try (FileReader fileReader = new FileReader(path);
             BufferedReader bufferedReader = new BufferedReader(fileReader)){
@@ -88,7 +87,6 @@ public class DeserializeDemo {
                     } else if (boolean.class.equals(field.getType())) {
                         field.set(result, Boolean.valueOf(value));
                     } else field.set(result, value);
-
 
                     System.out.println(field.getName());
                 } else field.set(result, null);

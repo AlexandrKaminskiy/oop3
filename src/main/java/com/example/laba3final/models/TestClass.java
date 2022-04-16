@@ -23,7 +23,10 @@ public class TestClass implements Serializable {
         this.testString = testString;
     }
 
-    public TestClass() {}
+    public TestClass() {
+        this.testInt = 0;
+        this.testString = "";
+    }
 
     public TestClass(int i, String c) {
         this.testInt = i;
