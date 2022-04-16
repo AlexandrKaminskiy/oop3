@@ -7,6 +7,15 @@ public class Assistant extends Teacher implements Serializable {
     public Assistant(int age, String firstName, String lastName, int salary, String subject) {
         super(age, firstName, lastName, salary, subject);
     }
+
+    public Staff getStaff() {
+        return staff;
+    }
+
+    public void setStaff(Staff staff) {
+        this.staff = staff;
+    }
+
     public Assistant(){
         super(0, "", "", 0, "");
         staff = new Staff();

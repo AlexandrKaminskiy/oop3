@@ -1,63 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<object class="com.company.Lecturer">
-	<testClass class="com.company.TestClass">
-		<testInt>
-			10
-		</testInt>
-		<testString>
-			wf
-		</testString>
-	</testClass>
-	<testClasses class="java.util.ArrayList">
-		<element class="com.company.TestClass">
-			<testInt>
-				1
-			</testInt>
-			<testString>
-				111
-			</testString>
-		</element>
-		<element class="com.company.TestClass">
-			<testInt>
-				2
-			</testInt>
-			<testString>
-				222
-			</testString>
-		</element>
-	</testClasses>
-	<subject>
-		wfe
-	</subject>
-	<salary>
-		12
-	</salary>
+<object class="com.example.laba3final.models.Student">
+	<groupName>
+		051002
+	</groupName>
+	<GPA>
+		9.2
+	</GPA>
 	<age>
-		10
+		19
 	</age>
 	<firstName>
-		erg
+		Dima
 	</firstName>
 	<lastName>
-		feef
+		Onoshko
 	</lastName>
 </object>
-<object class="com.company.Assistant">
-		<assistant class="com.company.Assistant">
-		</assistant>
+<object class="com.example.laba3final.models.Lecturer">
+		<testClass class="com.example.laba3final.models.TestClass">
+			<testInt>
+				0
+			</testInt>
+			<testString>
+				
+			</testString>
+		</testClass>
+		<testClasses class="java.util.ArrayList">
+		</testClasses>
 		<subject>
-			null
+			13232
 		</subject>
 		<salary>
 			0
 		</salary>
 		<age>
-			0
+			320
 		</age>
 		<firstName>
-			null
+			"2r
 		</firstName>
 		<lastName>
-			null
+			
 		</lastName>
+</object>
+<object class="com.example.laba3final.models.Assistant">
+			<staff class="com.example.laba3final.models.Staff">
+				<typeOfWork>
+					
+				</typeOfWork>
+				<salary>
+					0
+				</salary>
+				<age>
+					0
+				</age>
+				<firstName>
+					
+				</firstName>
+				<lastName>
+					
+				</lastName>
+			</staff>
+			<subject>
+				
+			</subject>
+			<salary>
+				0
+			</salary>
+			<age>
+				0
+			</age>
+			<firstName>
+				
+			</firstName>
+			<lastName>
+				
+			</lastName>
+</object>
+<object class="com.example.laba3final.models.Assistant">
+				<staff class="com.example.laba3final.models.Staff">
+					<typeOfWork>
+						
+					</typeOfWork>
+					<salary>
+						0
+					</salary>
+					<age>
+						0
+					</age>
+					<firstName>
+						
+					</firstName>
+					<lastName>
+						
+					</lastName>
+				</staff>
+				<subject>
+					history
+				</subject>
+				<salary>
+					0
+				</salary>
+				<age>
+					0
+				</age>
+				<firstName>
+					
+				</firstName>
+				<lastName>
+					
+				</lastName>
 </object>

@@ -14,9 +14,11 @@ public class SerializeDemo {
     private FileWriter writer;
     private Stack<String> selectorName;
     private int tabsCount;
-    SerializeDemo(ArrayList<UniversityRelatedHuman> humanArrayList) throws IOException {
+    SerializeDemo(ArrayList<UniversityRelatedHuman> humanArrayList) {
         this.humanArrayList = humanArrayList;
-        writer = new FileWriter("out.xml");
+        try {
+            writer = new FileWriter("out.xml");
+        } catch (IOException e) {}
         selectorName = new Stack<>();
         tabsCount = 0;
     }

@@ -67,29 +67,23 @@ public class DeserializeDemo {
             for (var field : fields) {
                 field.setAccessible(true);
                 String value = extractElement(field.getName(), objectInfo);
-                if (!value.isEmpty()) {
-                    if (!field.getType().isPrimitive() && (field.getType() != String.class)) {
-                        if (Collection.class.isAssignableFrom(field.getType())) {
-                            field.set(result, setCollection(field, value));
-                            System.out.println(field.getType());
-                        } else if (field.getType().isArray()) {
+//                if (!value.isEmpty()) {
+                if (!field.getType().isPrimitive() && (field.getType() != String.class)) {
+                    if (Collection.class.isAssignableFrom(field.getType())) {
+                        field.set(result, setCollection(field, value));
+                        System.out.println(field.getType());
+                    } else if (field.getType().isArray()) {
 //                        showArray(field,o);
-                        } else {
-                            field.set(result, createObject(String.valueOf(field.getType()).substring(6), value));
-                        }
-                        continue;
+                    } else {
+                        field.set(result, createObject(String.valueOf(field.getType()).substring(6), value));
                     }
+                    continue;
+                }
 
-                    if (int.class.equals(field.getType())) {
-                        field.set(result, Integer.valueOf(value));
-                    } else if (double.class.equals(field.getType())) {
-                        field.set(result, Double.valueOf(value));
-                    } else if (boolean.class.equals(field.getType())) {
-                        field.set(result, Boolean.valueOf(value));
-                    } else field.set(result, value);
+                ReflectionDemo.setValue(field,result,value);
 
-                    System.out.println(field.getName());
-                } else field.set(result, null);
+                System.out.println(field.getName());
+//                } else field.set(result, null);
             }
             clazz = clazz.getSuperclass();
         }

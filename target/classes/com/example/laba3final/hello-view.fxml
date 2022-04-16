@@ -11,9 +11,12 @@
       <ListView fx:id="objectList" layoutX="44.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0" />
       <Button fx:id="createNewObjectButton" layoutX="44.0" layoutY="342.0" mnemonicParsing="false" onAction="#onCreateButtonClick" text="Create" />
       <ListView fx:id="fieldList" layoutX="348.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="deleteObjectButton" layoutX="274.0" layoutY="272.0" mnemonicParsing="false" text="Delete" />
+      <Button fx:id="deleteObjectButton" layoutX="104.0" layoutY="342.0" mnemonicParsing="false" onAction="#onDeleteObjectButtonClick" text="Delete" />
       <ChoiceBox fx:id="objectClassChoiseBox" layoutX="44.0" layoutY="271.0" prefHeight="26.0" prefWidth="139.0" />
       <TextField fx:id="inputValueTextArea" layoutX="44.0" layoutY="307.0" />
       <TextField fx:id="fieldValue" layoutX="348.0" layoutY="272.0" />
+      <Button fx:id="setValueButton" layoutX="348.0" layoutY="307.0" mnemonicParsing="false" onAction="#onClickSetValueButton" text="OK" />
+      <Button fx:id="serializeButton" layoutX="162.0" layoutY="342.0" mnemonicParsing="false" onAction="#onClickSerializeButton" text="Serialize" />
+      <Button fx:id="deserizalizeButton" layoutX="233.0" layoutY="342.0" mnemonicParsing="false" onAction="#onClickDeserializeButton" text="Deserialize" />
    </children>
 </AnchorPane>
