@@ -1,4 +1,4 @@
-package com.example.laba3final.models;
+package com.example.laba3final.models.Hierarchy;
 
 public abstract class Teacher extends Employee{
     private String subject;

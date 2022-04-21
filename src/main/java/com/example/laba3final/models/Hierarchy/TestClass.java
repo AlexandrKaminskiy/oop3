@@ -1,8 +1,6 @@
-package com.example.laba3final.models;
+package com.example.laba3final.models.Hierarchy;
 
-import java.io.Serializable;
-
-public class TestClass implements Serializable {
+public class TestClass {
     private int testInt;
 
     private String testString;
@@ -31,6 +29,5 @@ public class TestClass implements Serializable {
     public TestClass(int i, String c) {
         this.testInt = i;
         this.testString = c;
-
     }
 }

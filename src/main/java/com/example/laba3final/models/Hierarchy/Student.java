@@ -1,14 +1,11 @@
-package com.example.laba3final.models;
+package com.example.laba3final.models.Hierarchy;
 
-import java.io.Serializable;
-
-public class Student extends UniversityRelatedHuman implements Serializable {
+public class Student extends UniversityRelatedHuman {
     private String groupName;
     private double GPA;
 
     public Student(int age, String firstName, String lastName, String groupName, double GPA) {
         super(age, firstName, lastName);
-
         this.groupName = groupName;
         this.GPA = GPA;
     }
@@ -36,11 +33,9 @@ public class Student extends UniversityRelatedHuman implements Serializable {
 
     @Override
     void goToUniversity() {
-        System.out.println("Я иду в университет полуать знания");
+        System.out.println("Я иду в университет получать знания");
     }
     void study() {
         System.out.println("Я читаю книги");
     }
-
-
 }

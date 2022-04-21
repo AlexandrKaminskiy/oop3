@@ -1,24 +1,15 @@
-package com.example.laba3final.models;
+package com.example.laba3final.models.Hierarchy;
 
-import java.io.Serializable;
-
-public class Assistant extends Teacher implements Serializable {
-    private Staff staff;
+public class Assistant extends Teacher {
+    private int labCount;
     public Assistant(int age, String firstName, String lastName, int salary, String subject) {
         super(age, firstName, lastName, salary, subject);
-    }
-
-    public Staff getStaff() {
-        return staff;
-    }
-
-    public void setStaff(Staff staff) {
-        this.staff = staff;
+        this.labCount = 0;
     }
 
     public Assistant(){
         super(0, "", "", 0, "");
-        staff = new Staff();
+        this.labCount = 0;
     }
     @Override
     void teach() {

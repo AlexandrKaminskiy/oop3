@@ -8,9 +8,11 @@ module com.example.laba3final {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.desktop;
 
     opens com.example.laba3final to javafx.fxml;
     exports com.example.laba3final;
     exports com.example.laba3final.Controllers;
     opens com.example.laba3final.Controllers to javafx.fxml;
+    opens com.example.laba3final.models.Serialization;
 }

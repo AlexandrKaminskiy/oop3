@@ -3,14 +3,15 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.laba3final.Controllers.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.laba3final.Controllers.HelloController">
    <children>
       <ListView fx:id="objectList" layoutX="44.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0" />
       <Button fx:id="createNewObjectButton" layoutX="44.0" layoutY="342.0" mnemonicParsing="false" onAction="#onCreateButtonClick" text="Create" />
-      <ListView fx:id="fieldList" layoutX="348.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0" />
       <Button fx:id="deleteObjectButton" layoutX="104.0" layoutY="342.0" mnemonicParsing="false" onAction="#onDeleteObjectButtonClick" text="Delete" />
       <ChoiceBox fx:id="objectClassChoiseBox" layoutX="44.0" layoutY="271.0" prefHeight="26.0" prefWidth="139.0" />
       <TextField fx:id="inputValueTextArea" layoutX="44.0" layoutY="307.0" />
@@ -18,5 +19,14 @@
       <Button fx:id="setValueButton" layoutX="348.0" layoutY="307.0" mnemonicParsing="false" onAction="#onClickSetValueButton" text="OK" />
       <Button fx:id="serializeButton" layoutX="162.0" layoutY="342.0" mnemonicParsing="false" onAction="#onClickSerializeButton" text="Serialize" />
       <Button fx:id="deserizalizeButton" layoutX="233.0" layoutY="342.0" mnemonicParsing="false" onAction="#onClickDeserializeButton" text="Deserialize" />
+      <TableView fx:id="tableView" layoutX="348.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="field" minWidth="0.0" prefWidth="97.60009765625" text="Field" />
+          <TableColumn fx:id="value" minWidth="0.0" prefWidth="100.7999267578125" text="Value" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
    </children>
 </AnchorPane>

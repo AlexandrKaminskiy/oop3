@@ -1,8 +1,7 @@
-package com.example.laba3final.models;
+package com.example.laba3final.models.Hierarchy;
 
-import java.io.Serializable;
 
-public class Staff extends Employee implements Serializable {
+public class Staff extends Employee {
     private String typeOfWork;
 
     public Staff(int age, String firstName, String lastName, int salary, String typeOfWork) {

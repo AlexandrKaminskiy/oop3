@@ -1,6 +1,6 @@
 package com.example.laba3final.models.Serialization;
 
-import com.example.laba3final.models.UniversityRelatedHuman;
+import com.example.laba3final.models.Hierarchy.UniversityRelatedHuman;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

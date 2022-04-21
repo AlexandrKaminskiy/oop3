@@ -1,11 +1,11 @@
-package com.example.laba3final.models;
+package com.example.laba3final.models.Hierarchy;
 
 import java.io.Serializable;
 
 public abstract class UniversityRelatedHuman implements Serializable {
     private int age;
     private String firstName;
-    private String lastName;
+    public String lastName;
     abstract void goToUniversity();
 
     public UniversityRelatedHuman(int age, String firstName, String lastName) {

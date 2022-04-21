@@ -1,113 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<object class="com.example.laba3final.models.Student">
-	<groupName>
-		051002
-	</groupName>
-	<GPA>
-		9.2
-	</GPA>
+<object class="com.example.laba3final.models.Hierarchy.Assistant">
+	<labCount>
+		0
+	</labCount>
+	<subject>
+		Яп
+	</subject>
+	<salary>
+		7
+	</salary>
 	<age>
-		19
+		100
 	</age>
 	<firstName>
-		Dima
+		
 	</firstName>
 	<lastName>
-		Onoshko
+		123
 	</lastName>
-</object>
-<object class="com.example.laba3final.models.Lecturer">
-		<testClass class="com.example.laba3final.models.TestClass">
-			<testInt>
-				0
-			</testInt>
-			<testString>
-				
-			</testString>
-		</testClass>
-		<testClasses class="java.util.ArrayList">
-		</testClasses>
-		<subject>
-			13232
-		</subject>
-		<salary>
-			0
-		</salary>
-		<age>
-			320
-		</age>
-		<firstName>
-			"2r
-		</firstName>
-		<lastName>
-			
-		</lastName>
-</object>
-<object class="com.example.laba3final.models.Assistant">
-			<staff class="com.example.laba3final.models.Staff">
-				<typeOfWork>
-					
-				</typeOfWork>
-				<salary>
-					0
-				</salary>
-				<age>
-					0
-				</age>
-				<firstName>
-					
-				</firstName>
-				<lastName>
-					
-				</lastName>
-			</staff>
-			<subject>
-				
-			</subject>
-			<salary>
-				0
-			</salary>
-			<age>
-				0
-			</age>
-			<firstName>
-				
-			</firstName>
-			<lastName>
-				
-			</lastName>
-</object>
-<object class="com.example.laba3final.models.Assistant">
-				<staff class="com.example.laba3final.models.Staff">
-					<typeOfWork>
-						
-					</typeOfWork>
-					<salary>
-						0
-					</salary>
-					<age>
-						0
-					</age>
-					<firstName>
-						
-					</firstName>
-					<lastName>
-						
-					</lastName>
-				</staff>
-				<subject>
-					history
-				</subject>
-				<salary>
-					0
-				</salary>
-				<age>
-					0
-				</age>
-				<firstName>
-					
-				</firstName>
-				<lastName>
-					
-				</lastName>
 </object>
