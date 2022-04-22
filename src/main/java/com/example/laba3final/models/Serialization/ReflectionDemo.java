@@ -15,6 +15,7 @@ public class ReflectionDemo {
     private HashMap<String, UniversityRelatedHuman> objectMap;
     private ArrayList<String> objectNamesList;
     private Object currentObject;
+    private String currentName;
     private String lastName;
     public ReflectionDemo() {
         this.objectMap = new HashMap<>();
@@ -30,6 +31,7 @@ public class ReflectionDemo {
 
         Object obj = objectMap.get(itemName);
         currentObject = obj;
+        currentName = itemName;
         List<Field> fields = getFields(obj);
 
         for (var field : fields) {
@@ -111,20 +113,38 @@ public class ReflectionDemo {
     }
 
 
-    public void setValue(String fieldName,String value) {
+    public String setValue(String fieldName,String value) {
         Class clazz = currentObject.getClass();
+        String objectName = currentName;
         while (!clazz.equals(Object.class)) {
             try {
                 Field field = clazz.getDeclaredField(fieldName);
                 field.setAccessible(true);
                 System.out.println(field.get(currentObject));
+                String temp = String.valueOf(field.get(currentObject));
                 setValue(field,currentObject,value);
-                return;
+                if (field.getName().equals("lastName")) {
+                    int i = 0;
+                    while (objectMap.containsKey(value)) {
+                        if (i == 0) {
+                            value += "_";
+                            i++;
+                        }
+                        value += "1";
+                    }
+                    objectMap.remove(objectName);
+                    objectMap.put(value, (UniversityRelatedHuman) currentObject);
+                    objectNamesList.set(objectNamesList.indexOf(currentName), value);
+                    objectName = value;
+                }
+                return objectName;
 
             } catch (IllegalAccessException | NoSuchFieldException e) {
                 clazz = clazz.getSuperclass();
             }
+
         }
+        return objectName;
     }
 
     public static void setValue(Field field, Object currentObject, String value) {

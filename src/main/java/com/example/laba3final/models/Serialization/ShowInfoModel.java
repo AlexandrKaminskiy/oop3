@@ -4,9 +4,7 @@ public class ShowInfoModel {
     private String fieldName;
     private String value;
 
-    public String getFieldName() {
-        return fieldName;
-    }
+    public String getFieldName() { return fieldName; }
 
     public String getValue() {
         return value;

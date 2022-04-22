@@ -65,8 +65,9 @@ public class HelloController {
 
     @FXML
     void onClickSetValueButton(ActionEvent event) {
-        reflectionDemo.setValue(fieldName, fieldValue.getText());
+        itemName = reflectionDemo.setValue(fieldName, fieldValue.getText());
         tableView.setItems(FXCollections.observableList(reflectionDemo.getfieldNames(itemName)));
+        objectList.setItems(FXCollections.observableArrayList(reflectionDemo.getObjectNamesList()));
     }
     @FXML
     void onDeleteObjectButtonClick(ActionEvent event) {
@@ -96,10 +97,8 @@ public class HelloController {
 
         tableView.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> {
             fieldName = tableView.getSelectionModel().selectedItemProperty().get().getFieldName();
-            if (itemName != null) {
-                fieldValue.setText(tableView.getSelectionModel().selectedItemProperty().get().getValue());
-                setValueButton.setDisable(false);
-            }
+            fieldValue.setText(tableView.getSelectionModel().selectedItemProperty().get().getValue());
+            setValueButton.setDisable(false);
         });
     }
 }
