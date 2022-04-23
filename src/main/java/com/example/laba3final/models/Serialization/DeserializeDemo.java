@@ -66,23 +66,25 @@ public class DeserializeDemo {
             Field[] fields = clazz.getDeclaredFields();
             for (var field : fields) {
                 field.setAccessible(true);
-                String value = extractElement(field.getName(), objectInfo);
-//                if (!value.isEmpty()) {
-                if (!field.getType().isPrimitive() && (field.getType() != String.class)) {
-                    if (Collection.class.isAssignableFrom(field.getType())) {
-                        field.set(result, setCollection(field, value));
-                        System.out.println(field.getType());
-                    } else if (field.getType().isArray()) {
+                if (!isNull(field.getName(), objectInfo)) {
+                    String value = extractElement(field.getName(), objectInfo);
+
+                    if (!field.getType().isPrimitive() && (field.getType() != String.class)) {
+                        if (Collection.class.isAssignableFrom(field.getType())) {
+                            field.set(result, setCollection(field, value));
+                            System.out.println(field.getType());
+                        } else if (field.getType().isArray()) {
 //                        showArray(field,o);
-                    } else {
-                        field.set(result, createObject(String.valueOf(field.getType()).substring(6), value));
+                        } else {
+                            field.set(result, createObject(String.valueOf(field.getType()).substring(6), value));
+                        }
+                        continue;
                     }
-                    continue;
-                }
 
-                ReflectionDemo.setValue(field,result,value);
+                    ReflectionDemo.setValue(field, result, value);
 
-                System.out.println(field.getName());
+                    System.out.println(field.getName());
+                } else field.set(result,null);
 //                } else field.set(result, null);
             }
             clazz = clazz.getSuperclass();
@@ -109,6 +111,15 @@ public class DeserializeDemo {
         return arr;
     }
 
+    private boolean isNull(String fieldName, String file) {
+        String myRegexp = String.format("<%s/>", fieldName);
+        Pattern pattern = Pattern.compile(myRegexp);
+        Matcher matcher = pattern.matcher(file);
+        if (matcher.find()) {
+            return true;
+        } else return false;
+    }
+
     private String extractElement(String fieldName, String file) {
         String result = new String();
         String myRegexp = String.format("(?<=%s.{0,100}?>).*?(?=%s)", "<"+fieldName,"</"+fieldName + ">");
@@ -121,6 +132,8 @@ public class DeserializeDemo {
         }
         return result;
     }
+
+
     private String deleteInfo(String fieldName, String file) {
 
         String myRegexp;

@@ -1,20 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<object class="com.example.laba3final.models.Hierarchy.Assistant">
-	<labCount>
-		0
-	</labCount>
-	<subject>
-		
-	</subject>
+<object class="com.example.laba3final.models.Hierarchy.DepartmentHead">
+	<department>
+		поит
+	</department>
 	<salary>
-		0
+		100
 	</salary>
 	<age>
-		0
+		50
 	</age>
 	<firstName/>
 	<lastName>
-		123
+		Лапицкая
 	</lastName>
-	<qqq class="java.util.ArrayList">
+</object>
+<object class="com.example.laba3final.models.Hierarchy.Dean">
+	<faculity>
+		ксис
+	</faculity>
+	<salary>
+		1000000
+	</salary>
+	<age>
+		60
+	</age>
+	<firstName>
+		Ирина
+	</firstName>
+	<lastName>
+		Лущакова
+	</lastName>
+</object>
+<object class="com.example.laba3final.models.Hierarchy.Staff">
+	<typeOfWork>
+		мытьё полов
+	</typeOfWork>
+	<salary>
+		200
+	</salary>
+	<age>
+		50
+	</age>
+	<firstName/>
+	<lastName>
+		Уборщица
+	</lastName>
+</object>
+<object class="com.example.laba3final.models.Hierarchy.Student">
+	<groupName>
+		051002
+	</groupName>
+	<GPA>
+		8.0
+	</GPA>
+	<age>
+		18
+	</age>
+	<firstName>
+		Александр
+	</firstName>
+	<lastName>
+		Каминский
+	</lastName>
+</object>
+<object class="com.example.laba3final.models.Hierarchy.Assistant">
+	<labCount>
+		6
+	</labCount>
+	<subject>
+		ооп
+	</subject>
+	<salary>
+		120
+	</salary>
+	<age>
+		25
+	</age>
+	<firstName>
+		Стас
+	</firstName>
+	<lastName>
+		Вересковский
+	</lastName>
+</object>
+<object class="com.example.laba3final.models.Hierarchy.Lecturer">
+	<subject>
+		ксис
+	</subject>
+	<salary>
+		30
+	</salary>
+	<age>
+		20
+	</age>
+	<firstName>
+		Дмитрий
+	</firstName>
+	<lastName>
+		Сурков
+	</lastName>
 </object>

@@ -11,7 +11,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 public class ReflectionDemo {
-    final public List<String> CLASS_NAMES = List.of("Assistant","Lecturer","Staff","Student");
+    final public List<String> CLASS_NAMES = List.of("Assistant","Lecturer","Staff","Student","Dean","DepartmentHead");
     private HashMap<String, UniversityRelatedHuman> objectMap;
     private ArrayList<String> objectNamesList;
     private Object currentObject;
@@ -37,6 +37,10 @@ public class ReflectionDemo {
         for (var field : fields) {
             try {
                 field.setAccessible(true);
+
+                if (field.get(obj) == null) {
+                    fieldNames.add(new ShowInfoModel(field.getName(), ""));
+                } else
                 fieldNames.add(new ShowInfoModel(field.getName(), String.valueOf(field.get(obj))));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
@@ -54,37 +58,7 @@ public class ReflectionDemo {
         }
         return fieldList;
     }
-    public Object getValue(String fieldName) {
-        Class clazz = currentObject.getClass();
-        while (!clazz.equals(Object.class)) {
-            try {
-                Field field = clazz.getDeclaredField(fieldName);
-                field.setAccessible(true);
-                System.out.println(field.get(currentObject));
-                return field.get(currentObject);
-            } catch (IllegalAccessException | NoSuchFieldException | NullPointerException e) {
-                clazz = clazz.getSuperclass();
-            }
-        }
 
-        return null;
-    }
-
-    public Object getAllValues(String fieldName) {
-        Class clazz = currentObject.getClass();
-        while (!clazz.equals(Object.class)) {
-            try {
-                Field field = clazz.getDeclaredField(fieldName);
-                field.setAccessible(true);
-                System.out.println(field.get(currentObject));
-                return field.get(currentObject);
-            } catch (IllegalAccessException | NoSuchFieldException | NullPointerException e) {
-                clazz = clazz.getSuperclass();
-            }
-        }
-
-        return null;
-    }
     public void createObject(String objectName, String className) {
         if (objectName != null) {
             lastName = objectName;
@@ -158,11 +132,11 @@ public class ReflectionDemo {
             } else if (String.class.equals(field.getType()))
                 field.set(currentObject, value);
         } catch (Exception e){
-            JOptionPane.showMessageDialog(null, "Incorrect value");
+            JOptionPane.showMessageDialog(null, "Incorrect value in field " + field.getName());
             if (field.getType().equals(String.class)) {
                 try {
                     field.set(currentObject,"");
-                    JOptionPane.showMessageDialog(null, "Incorrect value");
+                    JOptionPane.showMessageDialog(null, "Incorrect value in field " + field.getName());
                 } catch (IllegalAccessException ex) {}
             }
         }
@@ -195,6 +169,10 @@ public class ReflectionDemo {
             objectNamesList.clear();
             for (var el : arr) {
                 String temp = el.lastName;
+                if (temp == null) {
+                    temp = "";
+                    JOptionPane.showMessageDialog(null,"No object name (auto - empty string)");
+                }
                 int i = 0;
                 while (objectMap.containsKey(temp)) {
                     if (i == 0) {

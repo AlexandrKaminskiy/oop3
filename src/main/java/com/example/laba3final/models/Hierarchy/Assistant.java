@@ -8,7 +8,7 @@ public class Assistant extends Teacher {
     }
 
     public Assistant(){
-        super(0, "", "", 0, "");
+        super(0, null, null, 0, null);
         this.labCount = 0;
     }
     @Override

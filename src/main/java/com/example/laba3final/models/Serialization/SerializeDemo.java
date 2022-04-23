@@ -32,6 +32,7 @@ public class SerializeDemo {
             tabsCount++;
             getFields(human);
             writer.write( "</object>\n");
+            tabsCount--;
         }
         writer.flush();
     }
@@ -43,35 +44,37 @@ public class SerializeDemo {
                 Field[] fields = claz.getDeclaredFields();
                 for (Field field : fields) {
                     field.setAccessible(true);
-                    writer.write( tabs() + "<" + field.getName());
-                    selectorName.push(tabs() + "</" + field.getName() + ">\n");
-                    tabsCount++;
-                    if (!field.getType().isPrimitive() && (field.getType() != String.class)) {
-                        if (Collection.class.isAssignableFrom(field.getType())) {
-                            writer.write(" class=\""+String.valueOf(field.getType()).substring(6) + "\">\n");
-                            showCollection(field, o);
+                    if (field.get(o) != null) {
+                        writer.write(tabs() + "<" + field.getName());
+                        selectorName.push(tabs() + "</" + field.getName() + ">\n");
+                        tabsCount++;
+                        if (!field.getType().isPrimitive() && (field.getType() != String.class)) {
+                            if (Collection.class.isAssignableFrom(field.getType())) {
+                                writer.write(" class=\"" + String.valueOf(field.getType()).substring(6) + "\">\n");
+                                showCollection(field, o);
 
-                        } else if (field.getType().isArray()) {
-                            showArray(field,o);
-                        } else {
-                            writer.write(" class=\""+String.valueOf(field.getType()).substring(6) + "\">\n");
-                            getFields(field.get(o));
+                            } else if (field.getType().isArray()) {
+                                showArray(field, o);
+                            } else {
+                                writer.write(" class=\"" + String.valueOf(field.getType()).substring(6) + "\">\n");
+                                getFields(field.get(o));
+                            }
+                            writer.write(selectorName.pop());
+                            tabsCount--;
+                            continue;
                         }
-                        writer.write(selectorName.pop());
+                        if (field.get(o) == null) {
+                            System.out.println("NULL");
+
+                            selectorName.pop();
+                        } else {
+                            writer.write(">\n" + tabs() + field.get(o) + "\n");
+                            writer.write(selectorName.pop());
+                        }
+
+
                         tabsCount--;
-                        continue;
-                    }
-                    if (field.get(o) == null) {
-                        System.out.println("NULL");
-                        writer.write( "/>\n");
-                        selectorName.pop();
-                    } else {
-                        writer.write( ">\n" + tabs() + field.get(o) + "\n");
-                        writer.write(selectorName.pop());
-                    }
-
-
-                    tabsCount--;
+                    } else writer.write(tabs() + "<"+ field.getName() +"/>\n");
                 }
                 claz = claz.getSuperclass();
             }
@@ -97,7 +100,9 @@ public class SerializeDemo {
                 Class clazz = el.getClass();
                 writer.write(tabs() + "<element class=\""+clazz.getName()+"\">\n");
                 tabsCount++;
-                getFields(el);
+                if (!el.getClass().isPrimitive() && (el.getClass() != String.class))
+                    getFields(el);
+                else writer.write(tabs() + el + "\n");
                 tabsCount--;
                 writer.write(tabs() + "</element>\n");
             }

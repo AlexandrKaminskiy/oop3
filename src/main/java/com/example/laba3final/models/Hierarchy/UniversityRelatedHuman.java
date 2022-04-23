@@ -2,19 +2,19 @@ package com.example.laba3final.models.Hierarchy;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class UniversityRelatedHuman implements Serializable {
     private int age;
     private String firstName;
     public String lastName;
     abstract void goToUniversity();
-    private ArrayList<String> qqq;
     public UniversityRelatedHuman(int age, String firstName, String lastName) {
         this.age = age;
         this.firstName = null;
         this.lastName = lastName;
-
     }
+
     public UniversityRelatedHuman() {}
 
     public int getAge() {

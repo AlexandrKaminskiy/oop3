@@ -1,6 +1,6 @@
 package com.example.laba3final.models.Hierarchy;
 
-public abstract class Employee extends UniversityRelatedHuman{
+public class Employee extends UniversityRelatedHuman{
     int salary;
 
     public Employee(int age, String firstName, String lastName, int salary) {
