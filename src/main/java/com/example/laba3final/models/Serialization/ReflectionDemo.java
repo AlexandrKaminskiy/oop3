@@ -193,11 +193,18 @@ public class ReflectionDemo {
             var arr = deserializeDemo.deserialize();
             objectMap.clear();
             objectNamesList.clear();
-            int c = 0;
             for (var el : arr) {
-                objectMap.put("elem" + c, el);
-                objectNamesList.add("elem" + c);
-                c++;
+                String temp = el.lastName;
+                int i = 0;
+                while (objectMap.containsKey(temp)) {
+                    if (i == 0) {
+                        temp += "_";
+                        i++;
+                    }
+                    temp += "1";
+                }
+                objectMap.put(temp, el);
+                objectNamesList.add(temp);
             }
 
         } catch (IOException e) {

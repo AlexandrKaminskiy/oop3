@@ -1,78 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <object class="com.example.laba3final.models.Hierarchy.Assistant">
 	<labCount>
-		10
+		0
 	</labCount>
 	<subject>
-		oop
+		
 	</subject>
 	<salary>
-		700
+		0
 	</salary>
 	<age>
-		26
+		0
 	</age>
-	<firstName>
-		Stas
-	</firstName>
+	<firstName/>
 	<lastName>
-		Vereskovski
+		123
 	</lastName>
-</object>
-<object class="com.example.laba3final.models.Hierarchy.Assistant">
-		<labCount>
-			10
-		</labCount>
-		<subject>
-			qwe
-		</subject>
-		<salary>
-			10
-		</salary>
-		<age>
-			10
-		</age>
-		<firstName>
-			123
-		</firstName>
-		<lastName>
-			1234
-		</lastName>
-</object>
-<object class="com.example.laba3final.models.Hierarchy.Lecturer">
-			<subject>
-				ksis
-			</subject>
-			<salary>
-				500
-			</salary>
-			<age>
-				40
-			</age>
-			<firstName>
-				Kirill
-			</firstName>
-			<lastName>
-				Surkov
-			</lastName>
-</object>
-<object class="com.example.laba3final.models.Hierarchy.Assistant">
-				<labCount>
-					0
-				</labCount>
-				<subject>
-					
-				</subject>
-				<salary>
-					0
-				</salary>
-				<age>
-					0
-				</age>
-				<firstName>
-					Andrey
-				</firstName>
-				<lastName>
-					Surkov
-				</lastName>
+	<qqq class="java.util.ArrayList">
 </object>

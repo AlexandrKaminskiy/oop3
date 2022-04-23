@@ -39,7 +39,6 @@ public class SerializeDemo {
     private void getFields(Object o) throws IllegalAccessException {
         try {
             Class claz = o.getClass();
-
             while (claz != Object.class) {
                 Field[] fields = claz.getDeclaredFields();
                 for (Field field : fields) {
@@ -62,10 +61,16 @@ public class SerializeDemo {
                         tabsCount--;
                         continue;
                     }
+                    if (field.get(o) == null) {
+                        System.out.println("NULL");
+                        writer.write( "/>\n");
+                        selectorName.pop();
+                    } else {
+                        writer.write( ">\n" + tabs() + field.get(o) + "\n");
+                        writer.write(selectorName.pop());
+                    }
 
-                    writer.write( ">\n" + tabs() + field.get(o) + "\n");
 
-                    writer.write(selectorName.pop());
                     tabsCount--;
                 }
                 claz = claz.getSuperclass();
@@ -95,7 +100,6 @@ public class SerializeDemo {
                 getFields(el);
                 tabsCount--;
                 writer.write(tabs() + "</element>\n");
-
             }
         } catch (IllegalAccessException e) {
             e.printStackTrace();
